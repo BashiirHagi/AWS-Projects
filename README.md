@@ -1,5 +1,5 @@
-# AWS-Projects-
-Hands on AWS Labs to enhance understanding of key services: S3, VPC's, RDS, IAM, RDS, ECS, API Gateway
+# AWS-Projects: 
+Hands on AWS Labs to enhance understanding of key AWS services: S3, VPC's, RDS, IAM, RDS, ECS, API Gateway
 
 ## Simple Storage Service - S3 :
 
@@ -7,7 +7,7 @@ Clicked S3 under Storage services
 
 Created an S3 bucket in the us-east-1 (N.Virgina) region
 
-Upload 2 separate object files  
+Uploaded 2 separate object files to the bucket  
 
 Modified object permission to make the S3 bucket public  
 
