@@ -3,7 +3,7 @@ Hands on AWS Labs to enhance understanding of key AWS services: S3, VPC's, RDS, 
 
 ## Simple Storage Service - S3 :
 
-AWS Lab to make create S3 bucket & change bucket policy to public  
+AWS Lab to create S3 bucket & change bucket policy to public  
 
 Clicked on S3 under Storage services
 
@@ -35,4 +35,4 @@ Changed bucket policy to public to :
 } 
 ```
 
-Entered bucket URL on browser and the object files were accessible 
+Entered the bucket URL on browser and the object files were accessible 
