@@ -58,7 +58,7 @@ I provisioned an EC2 isntance and attached the S3FullAccess IAM policy to it
 I congiured the security group inound rules allowed SSH traffic to the instance
 
 
-key commands:
+### key commands:
 
 chmod 400 S3keys.pem - to make SSH private key secure  
 
@@ -66,9 +66,39 @@ ssh -i S3keys.pem ec2-user@54.236.213.214 - to SSH into EC2 instance
 
 aws s3 ls - to list the S3 bucket  
 
-Touch AWS.txt - create txt file  
+Touch AWS.txt - to create text (.txt) file  
 
-aws s3 mv AWS.txt s3://tes-bucket - to move txt file to S3 bucket  
+aws s3 mv AWS.txt s3://tes-bucket - to move the text file to the S3 bucket
+
+
+## Relational Database Service (RDS)
+
+I clicked on Databases and then Relational Database services (RDS)
+
+I provisioned a RDS MySQL database providing details such as name, login credentials, instance class and storage type 
+
+I then installed MYSQL workbench on my local machine to use to connect to my cloud server 
+
+I connected to the RDS database on AWS by using the DNS address and port no (3306) of the instance. 
+
+I used the username and password configured during the database setup 
+
+Successful connection was established to the RDS database
+
+
+## Virtual Private Cloud (VPC) - public and private subnets
+
+I created a VPC under Network & Content delivery services  
+
+I then created a public and private subnet inside the VPC and assigned a IP address to them. 
+
+I assigned the subnets to the VPC network 
+
+I then created the internet gateway and attached it to the VPC
+
+I then created a route table and connected the private and public subnets to it  
+
+I added a route on the route table to allow traffic to the internet gateway (IGW) with target 0.0.0.0/0. Instances in the public and private subent will be able to connect to the internet now. 
 
 
 
