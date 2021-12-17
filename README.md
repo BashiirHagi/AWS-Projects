@@ -68,7 +68,7 @@ aws s3 ls - to list the S3 bucket
 
 Touch AWS.txt - to create text (.txt) file  
 
-aws s3 mv AWS.txt s3://tes-bucket - to move the text file to the S3 bucket
+aws s3 mv AWS.txt s3://test-bucket - to move the text file to the S3 bucket
 
 
 ## Relational Database Service (RDS)
