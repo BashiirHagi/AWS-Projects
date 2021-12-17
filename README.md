@@ -13,7 +13,7 @@ I uploaded 2 separate object files to the S3 bucket via the AWS console
 
 I modified object permission to make the S3 bucket publicly accessible  
 
-Changed bucket policy to public to : 
+Changed bucket policy to: 
 
 ```
 { 
