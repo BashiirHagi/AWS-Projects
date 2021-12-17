@@ -98,7 +98,7 @@ I then created the internet gateway and attached it to the VPC
 
 I then created a route table and connected the private and public subnets to it  
 
-I added a route on the route table to allow traffic to the internet gateway (IGW) with target 0.0.0.0/0. Instances in the public and private subent will be able to connect to the internet now. 
+I added a route on the route table to allow traffic to the internet gateway (IGW) with target 0.0.0.0/0. Instances in the public and private subnet will be able to connect to the internet now. 
 
 
 
