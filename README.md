@@ -1,7 +1,7 @@
 # AWS-Projects: 
 Hands on AWS Labs to enhance understanding of key AWS services: S3, VPC's, RDS, IAM, RDS, ECS, API Gateway
 
-## Simple Storage Service - S3 :
+### Simple Storage Service - S3 :
 
 AWS task to create S3 bucket & change bucket policy to public  
 
@@ -51,14 +51,14 @@ I then made an image upload to the S3 bucket triggering the SNS topic
 I received a notification via email about the S3 upload action
 
 
-## Accessing an S3 bucket with an IAM role
+### Accessing an S3 bucket with an IAM role
 
 I provisioned an EC2 isntance and attached the S3FullAccess IAM policy to it
 
 I congiured the security group inound rules allowed SSH traffic to the instance
 
 
-### key commands:
+##### key commands:
 
 chmod 400 S3keys.pem - to make SSH private key secure  
 
@@ -71,7 +71,7 @@ Touch AWS.txt - to create text (.txt) file
 aws s3 mv AWS.txt s3://test-bucket - to move the text file to the S3 bucket
 
 
-## Relational Database Service (RDS)
+### Relational Database Service (RDS)
 
 I clicked on Databases and then Relational Database services (RDS)
 
@@ -86,7 +86,7 @@ I used the username and password configured during the database setup
 Successful connection was established to the RDS database
 
 
-## Virtual Private Cloud (VPC) - public and private subnets
+### Virtual Private Cloud (VPC) - public and private subnets
 
 I created a VPC under Network & Content delivery services  
 
@@ -100,6 +100,65 @@ I then created a route table and connected the private and public subnets to it
 
 I added a route on the route table to allow traffic to the internet gateway (IGW) with target 0.0.0.0/0. Instances in the public and private subnet will be able to connect to the internet now. 
 
+
+
+### CloudWatch for resource monitoring. created CloudWatch alarms and Dashboards
+
+Create an EC2 Instance with Amazon Linux 2 AMI
+
+I chose the default VPC, and configured security inbound rules with port 22 open for all hosts (0.0.0.0/0)
+
+I laucned the instance and downloaded the private key file (.pem) to my local machine
+
+I then SSH into the EC2 Instance and pefromed software instllations/updates
+
+##### Key Commands: 
+- sudo yum update -y
+- sudo amazon-linux-extras install epel -y
+- sudo yum install stress -y 
+
+
+##### Created a SNS Topic
+Navigated to the us-east-1 (N.Virginia) region
+
+Then went to Simple Notification Service (SNS) under Application Integration services
+
+Clicked on Topics and completed the details by providing a Type (standard), Nmae and Display name
+
+Clicked on create topic
+
+
+##### Subscribed to the SNS Topic
+I went to the SNS topic I had just created by blicking the topic name
+
+i then clicked on Create subscription
+
+I then provided the SNS details - Topic ARN, Protocol (Email) and endpoint - bashiir_20hotmail.co.uk
+
+I then clicked on Confirm subscription
+
+
+##### Check EC2 CPU Utilization Metrics in CloudWatch Metrics
+Navigate to cloudwatch services under Management & Governanfe service
+
+Clicked on All Metrics on the left-hand side
+
+The metrics were now visible for the EC2 instance
+
+
+##### Create CloudWatch Alarm. 
+
+##### Testing CloudWatch Alarm by Stressing CPU Utilization. 
+
+##### Checking For an Email from the SNS Topic. 
+
+##### Checking the CloudWatch Alarm Graph 
+
+##### Create a CloudWatch Dashboard. 
+
+
+
+ 
 
 
 
