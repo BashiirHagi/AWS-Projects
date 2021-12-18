@@ -139,14 +139,39 @@ I then clicked on Confirm subscription
 
 
 ##### Check EC2 CPU Utilization Metrics in CloudWatch Metrics
-Navigate to cloudwatch services under Management & Governanfe service
+I navigated to Cloudwatch services under Management & Governance service
 
-Clicked on All Metrics on the left-hand side
+Clicked on All Metrics on the left-hand panel
 
-The metrics were now visible for the EC2 instance
+The metrics were now visible for the EC2 instance I provisioned 
 
 
-##### Create CloudWatch Alarm. 
+##### Create CloudWatch Alarm
+
+I navigated to Cloudwatch services under Management & Governance service
+I clicked on Alarms on the left-hand panel
+I then clicked on Create alarm to begin provisioning the alarm
+In the specify metric & conditons page I: 
+
+- Clicked on select metric > EC2 
+- selected Per-Instance Metrics
+- Chose the CPU-Utilization metric
+
+I then configured the arm with the following details:
+For metric period I selected for 1 minute
+For CPU Utilization I selected Choose Greater
+Valiue: 30
+
+In the configure actions page under the Notifications page: 
+- I chose In Alarm as the Alarm state trigger 
+- Selected my SNS topic for SNS topic
+
+In the Add a description page I entered a unique name - MyServerCPUUtilizationAlarm
+
+I then clicked on review my alarm before creating it. 
+
+I finaly clicked on - Create Alarm to launch the CloudWatch Alarm. 
+
 
 ##### Testing CloudWatch Alarm by Stressing CPU Utilization. 
 
