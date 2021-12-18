@@ -170,7 +170,7 @@ In the Add a description page I entered a unique name - MyServerCPUUtilizationAl
 
 I then clicked on review my alarm before creating it. 
 
-I finaly clicked on - Create Alarm to launch the CloudWatch Alarm. 
+I finally clicked on - Create Alarm to launch the CloudWatch Alarm. 
 
 
 ##### Testing CloudWatch Alarm by Stressing CPU Utilization. 
