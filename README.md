@@ -104,13 +104,13 @@ I added a route on the route table to allow traffic to the internet gateway (IGW
 
 ### CloudWatch for resource monitoring. created CloudWatch alarms and Dashboards
 
-Create an EC2 Instance with Amazon Linux 2 AMI
+Created an EC2 Instance with Amazon Linux 2 AMI
 
-I chose the default VPC, and configured security inbound rules with port 22 open for all hosts (0.0.0.0/0)
+I chose the default VPC, and configured the security inbound rules with port 22 open for all hosts (0.0.0.0/0)
 
-I laucned the instance and downloaded the private key file (.pem) to my local machine
+I launched the instance and downloaded the private key file (.pem) to my local machine
 
-I then SSH into the EC2 Instance and pefromed software instllations/updates
+I then connected to my EC2 Instance using SSH and performed software installations/updates
 
 ##### Key Commands: 
 - sudo yum update -y
