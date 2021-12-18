@@ -173,13 +173,52 @@ I then clicked on review my alarm before creating it.
 I finally clicked on - Create Alarm to launch the CloudWatch Alarm. 
 
 
-##### Testing CloudWatch Alarm by Stressing CPU Utilization. 
 
-##### Checking For an Email from the SNS Topic. 
+##### Checking the CloudWatch Alarm Graph
 
-##### Checking the CloudWatch Alarm Graph 
+I navigated to the CloudWatch page and clicked on Alarms
 
-##### Create a CloudWatch Dashboard. 
+I was now able to visualise the alarm I created for CPU Utlization
+
+
+##### Created a CloudWatch Dashboard 
+
+I navigated to CloudWatch page and clicked on Dashboard on the left-hand panel 
+
+I then clicked on Create Dashboard and provided the following details: 
+
+Dashboard name - MyEC2ServerDashboard
+Widget type - Selected Line Graph
+Data Source - Selected Metrics
+Metrics - EC2 > Per-instance Metrics 
+
+Clicked on Create Widget and Save dashboard to create the Cloudwatch dashboard
+
+
+### Resizing EBS Volumes
+
+I provisioned an EC2 Linux instance Amazon Linux 2 AMI in the us-east-1 (N.Virginia) region 
+
+I configure the storage drive to be – 8GB SSD gp2 
+
+I then configured the security group inbound rules and allow SSH traffic from all hosts (0.0.0.0/0) 
+
+
+Once launched I connected to the instance using SSH and checked storage size using command: df-h 
+
+
+// Run the commands to check/configure instance storage drive:  
+
+Df –h  
+
+Lsblk  
+
+
+
+Modify and increase the storage drive to 20GB 
+ 
+
+
 
 
 
