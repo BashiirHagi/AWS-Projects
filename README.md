@@ -195,28 +195,25 @@ Metrics - EC2 > Per-instance Metrics
 Clicked on Create Widget and Save dashboard to create the Cloudwatch dashboard
 
 
-### Resizing EBS Volumes
+### Resizing EBS Volumes for a linux Instance
 
-I provisioned an EC2 Linux instance Amazon Linux 2 AMI in the us-east-1 (N.Virginia) region 
+I provisioned an EC2 Linux instance in the us-east-1 (N.Virginia) region 
 
 I configure the storage drive to be – 8GB SSD gp2 
 
-I then configured the security group inbound rules and allow SSH traffic from all hosts (0.0.0.0/0) 
+I configured the security group inbound rules to allow SSH traffic from all hosts (0.0.0.0/0) 
 
+I then launched the downloaded the private key file and laucnhed the instance 
 
-Once launched I connected to the instance using SSH and checked storage size using command: df-h 
+#### Modifiying the storage volume 
 
+I clicked on the instance storage volume ID - vol-0ef30a3c405ac4606
+I then clicked on Actions > Modify volume 
+I increased the Size (GiB) to 20GB and clicked on Modify 
 
-// Run the commands to check/configure instance storage drive:  
-
-Df –h  
-
-Lsblk  
-
-
-
-Modify and increase the storage drive to 20GB 
- 
+Checking the instance volume size 
+I connected to the instance using SSH 
+I ran the command df-h to check the free disk space and it showed 20GB
 
 
 
