@@ -106,7 +106,7 @@ The SNS topic has now been created
 Click the SNS topic you just created 
 Click on Create subscription
 
-subscription configuration: 
+Subscription configuration: 
 Protocol: Email
 Endpoint: Enter your email address 
 
@@ -120,19 +120,28 @@ Click on the email from AWS and click on Confirm Subscription
 Go to S3 under Storage services
 
 Create a S3 bucket - mytestbucket 
-Region: us-east-1 (N.Virginia)
-object ownership: Select ACLs disabled 
-create the S3 bucket
+
+Object ownership: Select ACLs disabled 
+
+Keep other settings as default
+
+Click Create bucket
+
 Save and make a copy of the Amazon Resource Name (ARN)
 
 
 #### Update the SNS topic Access Ppolicy: 
 
 Navigate to the SNS service
+
 Click on Topics in the left-hand panel
+
 Click on the existing SNS topic
+
 Click Edit > Access Policy 
-Enter the SNS topic ARN in the rsource section below 
+
+Enter the SNS topic ARN in the resource section below 
+
 Enter the S3 bucket ARN in the condition section below
 
 
@@ -170,6 +179,8 @@ Enter the S3 bucket ARN in the condition section below
 }
 
 ``` 
+
+Click Save changes
 
   
 ### Accessing an S3 bucket with an IAM role 
