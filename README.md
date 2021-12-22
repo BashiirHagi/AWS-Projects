@@ -1,12 +1,11 @@
 # AWS-Projects:  
 
-Hands on AWS Labs to enhance understanding of key AWS services: S3, VPC's, RDS, IAM, RDS, ECS, API Gateway 
+Hands on AWS Labs to enhance understanding of key AWS services: S3, VPC's, RDS, IAM, RDS, ECS, API Gateway's. 
 
   
 
 ### Simple Storage Service - S3 : 
 
-  
 
 #### AWS task to create a S3 bucket & change the bucket policy to public   
 
@@ -182,54 +181,91 @@ Enter the S3 bucket ARN in the condition section below
 
 Click Save changes
 
+
   
 ### Accessing an S3 bucket with an IAM role 
 
-  
+AWS task to provision a resource-based policy and attach it to a EC2 instance
 
-I provisioned an EC2 isntance and attached the S3FullAccess IAM policy to it 
+#### Create an IAM resource-based role 
 
-  
+Navigate to the us-east-1 (N.Virginia) on the AWS console 
 
-I congiured the security group inound rules allowed SSH traffic to the instance 
+Go to the Security, Identity & Compliance service and clickc IAM
 
-  
+Click Roles on the left-hand panel 
 
-  
+Under Use Cases click on EC2
+
+Select AmazonS3FullAccess
+
+Role name: S3Role
+
+Click Create role 
+
+
+#### Create an EC2 Instance 
+
+Go to Compute services and click on EC2 service
+
+Click on Launch instance 
+Choose Amazon Linux 2 AMI
+
+#### Instance configuration details 
+
+- Keep default configuration for storage and networking 
+
+- IAM Role: S3Role
+
+- Add a Tag : 
+
+- **Key**: Name
+
+- **Value**: LinuxInstance
+
+- Security Group: 
+
+- keep port 22 open for SSH traffic from all hosts (0.0.0.0/0)
+
+
+#### Connect to the EC2 instance using SSH 
+
+ssh -i privatekeyfile.pem ec2-user@<public_IP_address> - to SSH into the EC2 instance 
+
 
 ##### key commands: 
 
-  
-
-chmod 400 S3keys.pem - to make SSH private key secure   
-
-  
-
-ssh -i S3keys.pem ec2-user@54.236.213.214 - to SSH into EC2 instance   
-
-  
-
 aws s3 ls - to list the S3 bucket   
-
-  
 
 Touch AWS.txt - to create text (.txt) file   
 
-  
+aws s3 mv AWS.txt s3://test-bucket - to move the text file to the S3 bucket
 
-aws s3 mv AWS.txt s3://test-bucket - to move the text file to the S3 bucket 
 
-  
 
-  
 
 ### Relational Database Service (RDS) 
 
   
+#### AWS task to provison a MySQL database in the cloud and connect to it from a local machine
 
-I clicked on Databases and then Relational Database services (RDS) 
+Navigate to the us-east-1 (N.Virginia) region 
 
-  
+Go to Database services and click on Relational Database services (RDS) 
+
+Click on Create Database 
+
+Select the MySQL engine 
+Create credentials for databse (Username & Password)
+Keep default database settings 
+Click Create database
+
+#### Create security group for the RDS database 
+
+Go to Computer > EC2 service
+Click on Network Security > 
+
+
 
 I provisioned a RDS MySQL database providing details such as name, login credentials, instance class and storage type  
 
@@ -252,6 +288,8 @@ Successful connection was established to the RDS database
   
 
   
+
+
 
 ### Virtual Private Cloud (VPC) - public and private subnets 
 
