@@ -253,45 +253,88 @@ Navigate to the us-east-1 (N.Virginia) region
 
 Go to Database services and click on Relational Database services (RDS) 
 
-Click on Create Database 
+#### Provisioning a RDS database: 
 
-Select the MySQL engine 
-Create credentials for databse (Username & Password)
-Keep default database settings 
-Click Create database
+Database configuration details: 
 
-#### Create security group for the RDS database 
+Select the MySQL engine
 
-Go to Computer > EC2 service
-Click on Network Security > 
+Version: default
+
+Templates: Free-tier
+
+Database instance identifier: mydatabaseserver
+
+Master username: mydatabaseuser 
+
+password: set password 
+
+DB isntance class: db.t2.micro — 1 vCPU, 1 GiB RAM
+
+storage: General purpose SSD (gp2)
+
+Storage: 20 
+
+Enable storage autoscaling: Uncheck
+
+Public access: Yes 
+
+VPC security groups: 
+
+Select the RDS security group 
+
+Additional configuration settings:
+
+Initial database name: mydatabase
+
+DB parameter group: keep as default 
+
+Option group: keep as default
+
+Enable automated backups: Uncheck
+
+Enhaned montoring: Uncheck
+
+Keep the rest of the settings as default
+
+Click on Create database
+
+
+#### Create a security group for the RDS database 
+
+Go to Compute services > EC2 service
+
+Click on Network & Security > Security groups
+
+Click on Create security group
+
+Security group configuration: 
+
+##### Inbound rules:
+
+Add a rule to allow MySQL traffic on port 3306 from all hosts 0.0.0.0/0
+
+Click on Create security group 
+
+
+#### Connecting to the RDS Database using MySQL Workbench
+
+Open MySQL Workbench on your local machine 
+
+Click on the + icon to establish a new connection to the RDS database 
+
+Hostname: <paste the database endpoint here> 
+Port: 3306
+Username: mydatabaseuser
+Password: <enter your password here> 
+
+Click on Test Connection to connect to the RDS databse 
 
 
 
-I provisioned a RDS MySQL database providing details such as name, login credentials, instance class and storage type  
-
-  
-
-I then installed MYSQL workbench on my local machine to use to connect to my cloud server  
-
-  
-
-I connected to the RDS database on AWS by using the DNS address and port no (3306) of the instance.  
-
-  
-
-I used the username and password configured during the database setup  
-
-  
-
-Successful connection was established to the RDS database 
-
-  
-
-  
 
 
-
-### Virtual Private Cloud (VPC) - public and private subnets 
+  ### Virtual Private Cloud (VPC) - public and private subnets 
 
   
 
