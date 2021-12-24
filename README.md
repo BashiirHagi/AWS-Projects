@@ -331,33 +331,63 @@ Password: <enter your password here>
 Click on Test Connection to connect to the RDS databse 
 
 
+### Virtual Private Cloud (VPC) - Creating public and private subnets 
 
+Navigate to the us-east-1 (N.Virginia) Region in the AWS console 
+  
+Go to Network & Content Delivery and click on VPC
 
+Click on Your VPC on the left-hand panel and click on Create VPC
+  
+### VPC Configuration details: 
+  
+Name tag: 
 
-  ### Virtual Private Cloud (VPC) - public and private subnets 
+IPv4 CIDR block:
+
+IPv6 CIDR block:
+
+Tenancy:
+  
+### Creating Subnets
+
+Public subnet: 
+
+VPC ID: 
+
+Subnet Name: 
+
+Availability Zone: 
+
+IPv4 CIDR block: 
+
+Click on Create subnet
+  
+Private subnet:
+
+VPC ID:
+
+Subnet Name: 
+
+Availability Zone: 
+
+IPv4 CIDR block: 
+
+Click on Create subnet
+
+  
+### Create and configure Internet Gateway
 
   
 
+
+  
+  
 I created a VPC under Network & Content delivery services   
-
-  
-
 I then created a public and private subnet inside the VPC and assigned a IP address to them.  
-
-  
-
 I assigned the subnets to the VPC network  
-
-  
-
 I then created the internet gateway and attached it to the VPC 
-
-  
-
 I then created a route table and connected the private and public subnets to it   
-
-  
-
 I added a route on the route table to allow traffic to the internet gateway (IGW) with target 0.0.0.0/0. Instances in the public and private subnet will be able to connect to the internet now.  
 
   
@@ -366,7 +396,7 @@ I added a route on the route table to allow traffic to the internet gateway (IGW
 
   
 
-### CloudWatch for resource monitoring. created CloudWatch alarms and Dashboards 
+### CloudWatch for resource monitoring. creating CloudWatch alarms and Dashboards 
 
   
 
@@ -608,6 +638,6 @@ I ran the command df-h to check the free disk space and it showed 20GB
 
   
 
-  
+   
 
  
