@@ -376,19 +376,79 @@ IPv4 CIDR block:
 Click on Create subnet
 
   
-### Create and configure Internet Gateway
+### Create and configure a Internet Gateway
+  
+Click on Internet Gateway on the left-hand panel 
+
+Click on internet gateway
+
+Internet gateway configuration details:
+
+Name tag: MyInternetGateway
+
+Click on Create Internet gateway
+  
+Attaching the Internet gateway to a VPC 
+
+Select the Internet gateway from the list 
+
+Click on Actions > Attach to VPC 
+
+Select the VPC from the list 
+
+Click on Attach internet gateway
+  
+  
+### Creating a Route table: 
+
+Click on Route table on the left-hand panel
+
+Select the VPC from the list
+  
+Click on Create Route table
+  
+  
+### Associating subents with the route table
+ 
+Click on the route table
+
+Click on Subnet associations
+
+Click on Edit subnet associations
+  
+Select the subnet from the list 
+
+Click on Save associations
+  
+  
+#### Adding a route to allow traffic to the internet gateway for Internet connectivity
+  
+Select Route table 
+
+Select the public route table 
+
+Click on Routes and click on Edit Routes
+
+Click on Add route
+  
+#### Specify the following values:  
+  
+Desintation: Enter 0.0.0.0/0
+
+Target: internet gateway
+  
+Click Save changes 
+  
+  
+
+
 
   
 
 
+
   
   
-I created a VPC under Network & Content delivery services   
-I then created a public and private subnet inside the VPC and assigned a IP address to them.  
-I assigned the subnets to the VPC network  
-I then created the internet gateway and attached it to the VPC 
-I then created a route table and connected the private and public subnets to it   
-I added a route on the route table to allow traffic to the internet gateway (IGW) with target 0.0.0.0/0. Instances in the public and private subnet will be able to connect to the internet now.  
 
   
 
